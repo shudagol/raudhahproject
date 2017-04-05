@@ -15,8 +15,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Master <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="category.php">Category</a></li>
-                <li><a href="#">Sentence</a></li>
-                <li><a href="#">Variant</a></li>
+                <li><a href="sentence.php">Sentence</a></li>
+                <li><a href="variant.php">Variant</a></li>
                 
               </ul>
             </li> 

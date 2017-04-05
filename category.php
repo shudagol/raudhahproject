@@ -45,7 +45,7 @@ if(isset($_GET['message'])){
 					    <tr class="info">
 					      <th>No</th>
 					      <th>Category Name</th>
-					      <th>Aksi</th>
+					      <th>Action</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -56,7 +56,7 @@ if(isset($_GET['message'])){
 					      <td><?php echo $no; ?></td>
 					      <td><?php echo $value['category_name']; ?></td>
 					      
-					      <td><a style="color:black" href="category_edit.php?id=<?php echo $value['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a> | <a style="color:black" href="category_delete.php?id=<?php echo $value['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><span class="glyphicon glyphicon-trash"></span></a></td>
+					      <td><a class="btn btn-warning btn-sm" href="category_edit.php?id=<?php echo $value['id']; ?>"><span class="glyphicon glyphicon-pencil "></span></a>  <a class="btn btn-danger btn-sm" href="category_delete.php?id=<?php echo $value['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><span class="glyphicon glyphicon-trash"></span></a></td>
 					    </tr>
 					   <?php $no++; } ?>
 					  </tbody>

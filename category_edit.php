@@ -8,10 +8,7 @@
 
 		if ($_POST) {
 			if ($db->update("category", $_POST, "id = $id")) {
-				$alert = '<div class="alert alert-dismissible alert-success">
-								  <button type="button" class="close" data-dismiss="alert">&times;</button>
-								  <strong>Well done!</strong> You successfully update category.
-									</div>';
+				
 				header("Location: category.php?message=1");
 			}else{
 				$alert = '<div class="alert alert-dismissible alert-danger">
