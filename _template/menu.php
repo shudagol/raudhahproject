@@ -9,7 +9,7 @@
               <a href="index.php">Home</a>
             </li> 
             <li>
-              <a href="index.php">Data</a>
+              <a href="data_category.php">Data</a>
             </li> 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Master <span class="caret"></span></a>

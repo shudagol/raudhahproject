@@ -44,7 +44,7 @@
 						<div class="form-group">
 				      <label for="inputEmail" class="col-lg-3 control-label pull-left">Name Category</label>
 				      <div class="col-lg-9">
-				        <input type="text" name="category_name" class="form-control" id="inputEmail" placeholder="Enter Name Category">
+				        <input required="" type="text" name="category_name" class="form-control" id="inputEmail" placeholder="Enter Name Category">
 				      </div>
 				    </div>
 						

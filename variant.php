@@ -82,14 +82,14 @@ if(isset($_GET['message'])){
 					   foreach ($results as $key => $value) {?>
 					    <tr>
 					      <td><?php echo $no; ?></td>
-					      <td><?php echo $value['variant']; ?></td>
-					      <td><?php echo $value['translation']; ?></td>
-					      <td><?php echo $value['file']; ?></td>
-					      <td><?php echo $value['description']; ?></td>
-					      <td><?php echo $value['sentence']; ?></td>
-					      <td><?php echo $value['category_name']; ?></td>
+					      <td><?php echo substr( $value['variant'],0,25); ?></td>
+					      <td><?php echo substr( $value['translation'],0,25); ?></td>
+					      <td><?php echo substr( $value['file'],0,25); ?></td>
+					      <td><?php echo substr( $value['description'],0,25); ?></td>
+					      <td><?php echo substr( $value['sentence'],0,25); ?></td>
+					      <td><?php echo substr( $value['category_name'],0,25); ?></td>
 					      
-					      <td><a class="btn btn-warning btn-sm" href="sentence_edit.php?id=<?php echo $value['id']; ?>"><span class="glyphicon glyphicon-pencil "></span></a>  <a class="btn btn-danger btn-sm" href="sentence_delete.php?id=<?php echo $value['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><span class="glyphicon glyphicon-trash"></span></a></td>
+					      <td><a class="btn btn-warning btn-sm" href="variant_edit.php?id=<?php echo $value['id']; ?>"><span class="glyphicon glyphicon-pencil "></span></a>  <a class="btn btn-danger btn-sm" href="variant_delete.php?id=<?php echo $value['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><span class="glyphicon glyphicon-trash"></span></a></td>
 					    </tr>
 					   <?php $no++; } ?>
 					  </tbody>

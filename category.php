@@ -24,7 +24,7 @@ if(isset($_GET['message'])){
 
  <div class="container">
 		<div class="row">
-		  <div class="col-lg-8">
+		  <div class="col-lg-12">
 		  	<div>
 		  		&nbsp<br>
 		  		&nbsp<br>

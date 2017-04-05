@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Apr 2017 pada 05.51
+-- Generation Time: 05 Apr 2017 pada 21.57
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -36,18 +36,12 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `category_name`) VALUES
-(23, 'Body'),
-(21, 'Book'),
-(24, 'Candy'),
-(18, 'City'),
 (22, 'Color'),
 (3, 'Food'),
 (6, 'Greeting'),
-(20, 'Phone'),
 (16, 'Place'),
 (10, 'Sports'),
-(9, 'Transportation'),
-(19, 'Vacation');
+(9, 'Transportation');
 
 -- --------------------------------------------------------
 
@@ -63,14 +57,6 @@ CREATE TABLE `sentence` (
   `file` varchar(225) NOT NULL,
   `description` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `sentence`
---
-
-INSERT INTO `sentence` (`id`, `category`, `sentence`, `translation`, `file`, `description`) VALUES
-(3, 3, 'rice', 'nasi', 'cc', 'bla bla'),
-(4, 23, 'knk', 'kjkj', 'Bossanova Jawa - Alun - Alun Nganjuk.mp3', 'kjkjsks');
 
 -- --------------------------------------------------------
 
@@ -88,13 +74,6 @@ CREATE TABLE `variant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `variant`
---
-
-INSERT INTO `variant` (`id`, `sentence`, `variant`, `translation`, `file`, `description`) VALUES
-(1, 3, 'one', 'satu', 'kok', 'angk satu');
-
---
 -- Indexes for dumped tables
 --
 
@@ -109,13 +88,15 @@ ALTER TABLE `category`
 -- Indexes for table `sentence`
 --
 ALTER TABLE `sentence`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category` (`category`);
 
 --
 -- Indexes for table `variant`
 --
 ALTER TABLE `variant`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sentence` (`sentence`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -130,12 +111,28 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `sentence`
 --
 ALTER TABLE `sentence`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `variant`
 --
 ALTER TABLE `variant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `sentence`
+--
+ALTER TABLE `sentence`
+  ADD CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `variant`
+--
+ALTER TABLE `variant`
+  ADD CONSTRAINT `sentence` FOREIGN KEY (`sentence`) REFERENCES `sentence` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

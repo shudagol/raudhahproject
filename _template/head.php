@@ -9,3 +9,9 @@
 <script type="text/javascript" src="asset/js/bootstrap.js"></script>
 </head>
 <body>
+	<style type="text/css">
+		a{
+			color: #2C3E50;
+			
+		}
+	</style>

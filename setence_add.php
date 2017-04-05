@@ -26,7 +26,8 @@
 						<div class="form-group">
 				      <label for="inputEmail" class="col-lg-3 control-label pull-left">Category</label>
 				      <div class="col-lg-9">
-				        <select name="category" class="form-control">
+				        <select required="" name="category" class="form-control">
+				        	<option disabled="" selected="" value="">--- select category first ---</option>
 				        	<?php foreach ($results as $key => $value): ?>
 				        		<option value="<?php echo $value['id'] ?>"><?php echo $value['category_name'] ?></option>
 				        	<?php endforeach ?>
@@ -36,26 +37,26 @@
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">Sentence</label>
 				      <div class="col-lg-9">
-				        <input type="text" name="sentence" class="form-control" placeholder="Enter Sentence">
+				        <input required="" type="text" name="sentence" class="form-control" placeholder="Enter Sentence">
 				      </div>
 				    </div>
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">Translation</label>
 				      <div class="col-lg-9">
-				        <input type="text" name="translation" class="form-control" placeholder="Enter Translation">
+				        <input required="" type="text" name="translation" class="form-control" placeholder="Enter Translation">
 				      </div>
 				    </div>
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">File</label>
 				      <div class="col-lg-9">
-				        <input type="file" name="file" class="form-control" >
+				        <input required="" type="file" name="file" class="form-control" >
 				      </div>
 				    </div>
 
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">Description</label>
 				      <div class="col-lg-9">
-				        <textarea name="description" class="form-control " rows="4"></textarea>
+				        <textarea required="" name="description" class="form-control " rows="4"></textarea>
 				      </div>
 				    </div>
 						
