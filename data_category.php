@@ -25,7 +25,6 @@ $results = $db->select("category");
 					    <tr class="info">
 					      <th width="10%">No</th>
 					      <th>Category Name</th>
-					      <th width="20%">Look sentence</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -34,8 +33,7 @@ $results = $db->select("category");
 					   foreach ($results as $key => $value) {?>
 					    <tr>
 					      <td><?php echo $no; ?></td>
-					      <td><?php echo $value['category_name']; ?></td>
-					      <td><a style="text-decoration: none;" href="data_sentence.php?category=<?php echo $value['id'] ?>"><span class="glyphicon glyphicon-share-alt"> sentence</span></a></td>
+					      <td><a style="text-decoration: none;" href="data_sentence.php?category=<?php echo $value['id'] ?>"><?php echo $value['category_name']; ?></a></td>
 					    </tr>
 					   <?php $no++; } ?>
 					  </tbody>

@@ -71,7 +71,7 @@
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">Description</label>
 				      <div class="col-lg-9">
-				        <textarea required="" name="description" class="form-control"  rows="4"><?php echo $results[0]['description']?></textarea>
+				        <textarea name="description" class="form-control"  rows="4"><?php echo $results[0]['description']?></textarea>
 				      </div>
 				    </div>
 				    <input type="hidden" name="id" value=<?php echo $id ?>>

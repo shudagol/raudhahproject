@@ -49,14 +49,14 @@
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">File</label>
 				      <div class="col-lg-9">
-				        <input required="" type="file" name="file" class="form-control" >
+				        <input  type="file" name="file" class="form-control" >
 				      </div>
 				    </div>
 
 				    <div class="form-group">
 				      <label  class="col-lg-3 control-label pull-left">Description</label>
 				      <div class="col-lg-9">
-				        <textarea required="" name="description" class="form-control " rows="4"></textarea>
+				        <textarea name="description" class="form-control " rows="4"></textarea>
 				      </div>
 				    </div>
 						

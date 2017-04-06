@@ -18,6 +18,27 @@ $sql = "select
 
 	$results = $db->run($sql);
 
+	$sql_variant = "select 
+							variant.*,
+							sentence.sentence,
+							sentence.id as id_sentence,
+							category.category_name,
+							category.id as id_category
+						from
+							variant 
+						join 
+							sentence 
+						on
+							sentence.id = variant.sentence
+						join 
+							category 
+						on
+							sentence.category = category.id
+						where
+							variant.sentence = $id_sentence";
+
+	$variants = $db->run($sql_variant);
+
  ?>
 
 <?php include('_template/head.php'); ?>
@@ -41,8 +62,8 @@ $sql = "select
 					tidak ada data
 										
 				<?php else: ?>
-					
-		    <table border="1" id="datatable" class="table table-hover table-striped ">
+		  	
+		    <table border="1" class="table table-hover table-striped ">
 					    <tr>
 					    	<td class="success" width="30%">Category</td>
 					    	<td style=""><?php echo $results[0]['category_name'] ?></td>
@@ -64,10 +85,42 @@ $sql = "select
 					    	<td style=""><?php echo $results[0]['description'] ?></td>
 					    </tr>
 					</table> 
-				<?php endif ?>
 					<div class="clearfix"></div>
 		    
 		  </div>
+
+		  <div class="col-lg-12">
+		  <h4 class="pull-left">Variant</h4>
+				<br><hr>
+					<table id="datatable" class="table table-striped table-hover ">
+					  <thead>
+					    <tr class="info">
+					      <th width="10%">No</th>
+					      <th>Variant</th>
+					      <th>Translation</th>
+					      <th>File</th>
+					      <th>Desciption</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  <?php 
+					  $no = 1;
+					   foreach ($variants as $key => $variant) {?>
+					    <tr>
+					      <td><?php echo $no; ?></td>
+					      <td><?php echo $variant['variant']; ?></td>
+					      <td><?php echo $variant['translation']; ?></td>
+					      <td><a style="text-decoration: none" target="_blank" href="file/<?php echo $variant['file']; ?>"><?php echo $variant['file']; ?></a></td>
+					      <td><?php echo $variant['description']; ?></td>
+					      
+					    </tr>
+					   <?php $no++; } ?>
+					  </tbody>
+					</table>		  	
+
+		  </div>	
+				<?php endif ?>
+
 		</div>
 	</div>
 

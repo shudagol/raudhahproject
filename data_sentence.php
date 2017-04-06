@@ -38,9 +38,6 @@ $results = $db->select("sentence", "category = $id_category");
 					    <tr class="danger">
 					      <th width="10%">No</th>
 					      <th>Sentence</th>
-					      <th>Detail</th>
-					      <th width="20%">Look variant</th>
-
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -49,11 +46,8 @@ $results = $db->select("sentence", "category = $id_category");
 					   foreach ($results as $key => $value) {?>
 					    <tr>
 					      <td><?php echo $no; ?></td>
-					      <td><?php echo $value['sentence']; ?></td>
-					      <td><a style="text-decoration: none;" href="data_sentence_detail.php?sentence=<?php echo $value['id'] ?>&name=<?php echo $value['sentence'] ?>"><span class="glyphicon glyphicon-info-sign"> detail </span></a></td>
-					      <td><a style="text-decoration: none;" href="data_variant.php?sentence=<?php echo $value['id'] ?>&name=<?php echo $value['sentence'] ?>"><span class="glyphicon glyphicon-share-alt"> variant </span></a></td>
-
-					      
+					      <td><a style="text-decoration: none;" href="data_sentence_detail.php?sentence=<?php echo $value['id'] ?>&name=<?php echo $value['sentence'] ?>"><?php echo $value['sentence']; ?></a>
+					      </td>
 					    </tr>
 					   <?php $no++; } ?>
 					  </tbody>
